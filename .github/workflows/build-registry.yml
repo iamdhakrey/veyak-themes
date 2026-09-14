@@ -36,6 +36,13 @@ jobs:
       - name: Build Registry JSON
         run: node scripts/build-registry.mjs
 
+      - name: Copy Schema Definitions
+        run: |
+          mkdir -p ./dist/schema/themes
+          cp extension.schema.json ./dist/schema/themes/1.0.0.json
+          # Also copy to root dist for backwards-compatibility with extension.schema.json URLs
+          cp extension.schema.json ./dist/extension.schema.json
+
       - name: Disable Jekyll processing
         run: touch ./dist/.nojekyll
 
