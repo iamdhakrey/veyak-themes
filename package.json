@@ -1,0 +1,31 @@
+{
+  "name": "veyak-themes",
+  "version": "1.0.0",
+  "description": "Central community theme registry and validation pipeline for Veyak",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build-registry.mjs",
+    "test": "npm run validate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamdhakrey/veyak-themes.git"
+  },
+  "keywords": [
+    "veyak",
+    "themes",
+    "registry",
+    "api-client"
+  ],
+  "author": "Hrithik Dhakrey",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

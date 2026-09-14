@@ -1,0 +1,3 @@
+[submodule "extensions/github-dark"]
+	path = extensions/github-dark
+	url = https://github.com/iamdhakrey/veyak-github-dark-theme

@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://themes.veyak.iamdhakrey.dev/schemas/themes/1.0.0.json",
+  "title": "VeyakTheme",
+  "description": "Manifest schema for community and built-in Veyak themes",
+  "type": "object",
+  "required": [
+    "$schema",
+    "id",
+    "name",
+    "version",
+    "description",
+    "author",
+    "license",
+    "tags",
+    "variant",
+    "tokens"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Unique kebab-case theme ID matching the submodule folder name"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 280
+    },
+    "author": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri"
+    },
+    "license": {
+      "type": "string",
+      "enum": ["MIT", "Apache-2.0", "GPL-3.0", "BSD-3-Clause", "ISC", "Unlicense"]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "uniqueItems": true,
+      "maxItems": 8
+    },
+    "variant": {
+      "type": "string",
+      "enum": ["dark", "light"]
+    },
+    "isBuiltin": {
+      "type": "boolean",
+      "default": false
+    },
+    "screenshot": {
+      "type": "string",
+      "description": "Relative path to thumbnail for the gallery"
+    },
+    "tokens": {
+      "type": "object",
+      "required": ["ui", "syntax"],
+      "additionalProperties": false,
+      "properties": {
+        "ui": {
+          "type": "object",
+          "required": [
+            "colorBg",
+            "colorPanel",
+            "colorPanelRaised",
+            "colorBorder",
+            "colorBorderMuted",
+            "colorTextPrimary",
+            "colorTextSecondary",
+            "colorTextMuted",
+            "colorPrimary",
+            "colorPrimaryHover",
+            "colorSecondary",
+            "colorSuccess",
+            "colorError",
+            "colorWarning",
+            "methodGet",
+            "methodPost",
+            "methodPut",
+            "methodDelete",
+            "methodPatch",
+            "methodQuery",
+            "methodWs",
+            "methodGrpc",
+            "methodGraphql",
+            "radiusMd",
+            "radiusLg"
+          ],
+          "properties": {
+            "colorBg": { "$ref": "#/$defs/hexColor" },
+            "colorPanel": { "$ref": "#/$defs/hexColor" },
+            "colorPanelRaised": { "$ref": "#/$defs/hexColor" },
+            "colorBorder": { "$ref": "#/$defs/hexColor" },
+            "colorBorderMuted": { "$ref": "#/$defs/hexColor" },
+            "colorTextPrimary": { "$ref": "#/$defs/hexColor" },
+            "colorTextSecondary": { "$ref": "#/$defs/hexColor" },
+            "colorTextMuted": { "$ref": "#/$defs/hexColor" },
+            "colorPrimary": { "$ref": "#/$defs/hexColor" },
+            "colorPrimaryHover": { "$ref": "#/$defs/hexColor" },
+            "colorSecondary": { "$ref": "#/$defs/hexColor" },
+            "colorSuccess": { "$ref": "#/$defs/hexColor" },
+            "colorError": { "$ref": "#/$defs/hexColor" },
+            "colorWarning": { "$ref": "#/$defs/hexColor" },
+            "methodGet": { "$ref": "#/$defs/hexColor" },
+            "methodPost": { "$ref": "#/$defs/hexColor" },
+            "methodPut": { "$ref": "#/$defs/hexColor" },
+            "methodDelete": { "$ref": "#/$defs/hexColor" },
+            "methodPatch": { "$ref": "#/$defs/hexColor" },
+            "methodQuery": { "$ref": "#/$defs/hexColor" },
+            "methodWs": { "$ref": "#/$defs/hexColor" },
+            "methodGrpc": { "$ref": "#/$defs/hexColor" },
+            "methodGraphql": { "$ref": "#/$defs/hexColor" },
+            "radiusMd": { "type": "string", "pattern": "^\\d+(px|rem)$" },
+            "radiusLg": { "type": "string", "pattern": "^\\d+(px|rem)$" }
+          },
+          "additionalProperties": false
+        },
+        "syntax": {
+          "type": "object",
+          "required": [
+            "comment",
+            "property",
+            "string",
+            "number",
+            "null",
+            "function",
+            "variable",
+            "attribute",
+            "className",
+            "boolean",
+            "keyword",
+            "punctuation",
+            "operator"
+          ],
+          "properties": {
+            "comment": { "$ref": "#/$defs/hexColor" },
+            "property": { "$ref": "#/$defs/hexColor" },
+            "string": { "$ref": "#/$defs/hexColor" },
+            "number": { "$ref": "#/$defs/hexColor" },
+            "null": { "$ref": "#/$defs/hexColor" },
+            "function": { "$ref": "#/$defs/hexColor" },
+            "variable": { "$ref": "#/$defs/hexColor" },
+            "attribute": { "$ref": "#/$defs/hexColor" },
+            "className": { "$ref": "#/$defs/hexColor" },
+            "boolean": { "$ref": "#/$defs/hexColor" },
+            "keyword": { "$ref": "#/$defs/hexColor" },
+            "punctuation": { "$ref": "#/$defs/hexColor" },
+            "operator": { "$ref": "#/$defs/hexColor" }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+    }
+  }
+}
