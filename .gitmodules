@@ -1,6 +1,6 @@
 [submodule "extensions/github-dark"]
 	path = extensions/github-dark
 	url = https://github.com/iamdhakrey/veyak-github-dark-theme
-[submodule "extension/oled-black"]
-	path = extension/oled-black
+[submodule "extensions/oled-black"]
+	path = extensions/oled-black
 	url = https://github.com/iamdhakrey/Veyak-OLED-Black-Theme
