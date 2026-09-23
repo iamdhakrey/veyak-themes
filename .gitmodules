@@ -4,3 +4,6 @@
 [submodule "extensions/oled-black"]
 	path = extensions/oled-black
 	url = https://github.com/iamdhakrey/Veyak-OLED-Black-Theme
+[submodule "extensions/midnight-pro"]
+	path = extensions/midnight-pro
+	url = https://github.com/sarthak2443/veyak-midnight-pro-theme
